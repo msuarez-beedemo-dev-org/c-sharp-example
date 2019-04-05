@@ -1,7 +1,7 @@
 node ('Windows-agent') {
     timestamps{
         stage('Checkout') {
-            git credentialsId: 'joost-github', url: 'https://github.com/joostvdg/c-sharp-example.git'
+            git credentialsId: 'Github', url: 'https://github.com/msuarez-beedemo-dev-org/c-sharp-example'
         }
 
         def sonarHome = tool name: 'SonarQubeScannerMS', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation'
