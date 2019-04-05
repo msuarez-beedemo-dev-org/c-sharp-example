@@ -9,8 +9,9 @@ pipeline {
 				stage('Sonar Finish'){
 					// finish
 					// step([$class: 'MsBuildSQRunnerEnd'])
+ 				steps{
 					bat "\"${sonarHome}\\MSBuild.SonarQube.Runner.exe\" end"
 				}
-				
+			}
 			}
 }
