@@ -1,6 +1,6 @@
 pipeline {
 	agent {'Windows-agent'}
-		{
+		
 			stages{
 				stage('Build'){
 				  steps{
@@ -10,7 +10,7 @@ pipeline {
 
 			}
 
-		}
+		
 
 
 
