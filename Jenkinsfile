@@ -1,4 +1,4 @@
-node ('windows') {
+node ('Windows-agent') {
     timestamps{
         stage('Checkout') {
             git credentialsId: 'joost-github', url: 'https://github.com/joostvdg/c-sharp-example.git'
