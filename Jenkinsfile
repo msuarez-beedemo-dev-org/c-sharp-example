@@ -20,7 +20,9 @@ pipeline {
 					// finish
 					// step([$class: 'MsBuildSQRunnerEnd'])
  				steps{
+				withSonarQubeEnv('Sonar') {
 					bat "MSBuild.SonarQube.Runner.exe end"
+				}
 				}
 			}
 			}
