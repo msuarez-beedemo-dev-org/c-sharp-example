@@ -2,11 +2,13 @@ pipeline {
 	agent {label 'Windows-agent'}
 			stages{
 				stage('Build'){
-					withSonarQubeEnv('Sonar') {
 				  steps{
+						withSonarQubeEnv('Sonar') {
+
 						 bat "MSBuild.SonarQube.Runner.exe begin /key:TestApp /name:ProjectName /version:1.0"
+					 }
 					}
-				}
+
 				}
 				stage('Sonar Finish'){
 					// finish
