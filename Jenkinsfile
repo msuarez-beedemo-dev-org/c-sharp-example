@@ -11,7 +11,7 @@ pipeline {
 				}
 				stage('Build'){
 					steps{
-						bat 'MSBuild.exe /t:Rebuild'
+						bat "MSBuild.exe /t:Rebuild"ß
 					}
 
 				}
