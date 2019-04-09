@@ -1,4 +1,7 @@
 pipeline {
+	environment{
+		def MSBuild = "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
+	}
 	agent {label 'Windows-agent'}
 			stages{
 				stage('Start Scanning'){
@@ -11,7 +14,7 @@ pipeline {
 				}
 				stage('Build'){
 					steps{
-						bat 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe /t:Rebuild' 
+						bat '${MSBuild} /t:Rebuild'
 					}
 
 				}
