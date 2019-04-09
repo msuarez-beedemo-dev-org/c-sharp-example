@@ -28,7 +28,8 @@ pipeline {
 					steps{
 								bat "nuget.exe pack Package.nuspec"
 								withCredentials([string(credentialsId: 'Nuget Token', variable: 'token')]) {
-									bat "nuget.exe push Package.1.0.0.nupkg admin:${token} -Source http://35.222.19.76:32000/repository/nuget-hosted/"
+									bat "nuget.exe setapikey ${token} -source http://35.222.19.76:32000/repository/nuget-private-hosted/"
+									bat "nuget.exe push Package.1.0.0.nupkg -Source http://35.222.19.76:32000/repository/nuget-private-hosted/"
 							}
 					}
 				}
