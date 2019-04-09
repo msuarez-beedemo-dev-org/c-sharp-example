@@ -14,7 +14,7 @@ pipeline {
 				}
 				stage('Build'){
 					steps{
-						bat '${MSBuild} /t:Rebuild'
+						bat '${env.MSBuild} /t:Rebuild'
 					}
 
 				}
