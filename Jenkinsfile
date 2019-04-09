@@ -12,9 +12,7 @@ pipeline {
 				}
 				stage('Build'){
 					steps{
-						def msbuildHome = tool name: 'default', type: 'hudson.plugins.msbuild.MsBuildInstallation'
-						echo "msbuildHome=${msbuildHome}"
-						bat "\"${msbuildHome}\\msbuild\" /t:Rebuild"
+							bat "\"${tool 'MSBuild'}\"
 					}
 
 				}
