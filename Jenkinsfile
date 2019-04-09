@@ -12,7 +12,7 @@ pipeline {
 				}
 				stage('Build'){
 					steps{
-							bat "\"${tool 'MSBuild'}\""
+							bat "\"${tool 'MSBuild'}\" /t:Rebuild"
 					}
 
 				}
