@@ -24,13 +24,12 @@ pipeline {
 					}
 					}
 				}
-				stage('Sonar Finish'){
+				stage('Nuget push'){
 					steps{
 								bat "nuget.exe pack Package.nuspec"
 								withCredentials([string(credentialsId: 'Nuget Token', variable: 'token')]) {
 									bat "nuget.exe push Package.1.0.0.nupkg ${token} -Source http://35.222.19.76:32000/repository/nuget.org-proxy/"
-								}
-
+							}
 					}
 				}
 
