@@ -1,7 +1,5 @@
 pipeline {
-	environment{
-		 MSBuild = "C:\\'Program Files (x86)'\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe"
-	}
+
 	agent {label 'Windows-agent'}
 			stages{
 				stage('Start Scanning'){
@@ -14,7 +12,9 @@ pipeline {
 				}
 				stage('Build'){
 					steps{
-						bat "${env.MSBuild} /t:Rebuild"
+						def msbuildHome = tool name: 'default', type: 'hudson.plugins.msbuild.MsBuildInstallation'
+						echo "msbuildHome=${msbuildHome}"
+						bat "\"${msbuildHome}\\msbuild\" /t:Rebuild"
 					}
 
 				}
