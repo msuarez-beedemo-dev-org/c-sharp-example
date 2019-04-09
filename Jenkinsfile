@@ -5,7 +5,7 @@ pipeline {
 				stage('Start Scanning'){
 				  steps{
 						withSonarQubeEnv('Sonar') {
-						 bat "MSBuild.SonarQube.Runner.exe begin /key:TestApp /name:ProjectName /version:1.0"
+						 bat "MSBuild.SonarQube.Runner.exe begin /key:TestApp /name:CSharpApp /version:1.0"
 					 }
 					}
 
